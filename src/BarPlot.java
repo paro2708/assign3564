@@ -1,13 +1,15 @@
-import javax.swing.JButton;
 import javax.swing.JPanel;
 import java.awt.Color;
 import java.awt.Dimension;
+import java.awt.Graphics;
 
 public class BarPlot extends DecoratorPlot {
     JPanel panel;
+    Drawable s;
 
     public BarPlot(Drawable s) {
         super(s);
+        this.s = s;
     }
 
     @Override
@@ -18,10 +20,19 @@ public class BarPlot extends DecoratorPlot {
         return finalPanel;
     }
 
-    private void drawPoints() {
-        panel = new JPanel();
-        panel.setPreferredSize(new Dimension(400, 300));
+    @Override
+    public void paint(Graphics g) {
+        super.paint(g);
+        g.setColor(Color.YELLOW);
+        g.drawRect(0, 0, 500, 300);
+        g.drawLine(10, 0, 80, 90);
+        System.out.println("HEYY WITC");
+        System.out.println("Bar Plot paint Method");
+    }
 
-        panel.setBackground(Color.GRAY);
+    private void drawPoints() {
+        panel = new BarPlot(s);
+        panel.setPreferredSize(new Dimension(400, 300));
+        panel.setBackground(Color.BLACK);
     }
 }

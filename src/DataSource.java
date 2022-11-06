@@ -1,7 +1,7 @@
 
 public class DataSource extends Observable {
 	private static DataSource d;
-	int[] points = new int[75];
+	int[] points = new int[50];
 
 	public static DataSource getDataSource() {
 		if (d == null)

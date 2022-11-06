@@ -1,6 +1,6 @@
 import javax.swing.JPanel;
 
-public class DecoratorPlot implements Drawable {
+public class DecoratorPlot extends JPanel implements Drawable {
     Drawable simplePlot;
     int[] points;
 
