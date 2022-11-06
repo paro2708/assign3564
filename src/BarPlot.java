@@ -21,6 +21,7 @@ public class BarPlot extends DecoratorPlot {
     private void drawPoints() {
         panel = new JPanel();
         panel.setPreferredSize(new Dimension(400, 300));
+
         panel.setBackground(Color.GRAY);
     }
 }

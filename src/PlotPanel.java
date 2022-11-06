@@ -1,5 +1,8 @@
 
+import java.awt.Color;
 import javax.swing.JPanel;
+import javax.swing.border.LineBorder;
+import javax.swing.border.TitledBorder;
 import java.awt.FlowLayout;
 // import java.awt.Color;
 import javax.swing.*;
@@ -30,6 +33,7 @@ public class PlotPanel extends JPanel implements Observer {
     public JPanel drawPanels() {
         jPanel = new JPanel(new FlowLayout(FlowLayout.LEADING, 10, 10));
         jPanel.setSize(470, 1000);
+        jPanel.setBorder(new TitledBorder(new LineBorder(Color.BLACK), "JPanel 1"));
         // Drawable plot = new BarPlot(new BarPlot(new BarPlot(new BarPlot(new
         // BasePlot()))));
         Drawable plot = new BarPlot(new BarPlot(new BasePlot()));

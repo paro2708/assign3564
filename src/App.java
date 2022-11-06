@@ -13,7 +13,7 @@ public class App extends JFrame implements ActionListener {
         JButton runButton = new JButton("Run");
         dataSource.setObs1(plotPanel);
         dataSource.setData();
-        frame.setSize(500, 1100);
+        // frame.setSize(1000, 1100);
         frame.setLayout(new FlowLayout(FlowLayout.LEADING, 10, 10));
         frame.add(plotPanel.drawPanels());
         runButton.addActionListener(this);
@@ -32,7 +32,6 @@ public class App extends JFrame implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
         System.out.println("Run Button Clicked");
-        dataSource.setData();
         dataSource.setData();
     }
 
