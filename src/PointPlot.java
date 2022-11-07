@@ -30,10 +30,13 @@ public class PointPlot extends DecoratorPlot {
         super.paint(g);
         g.setColor(Color.YELLOW);
         int points[] = DataSource.getDataSource().getData();
+        int height = 700;
         int prevX = 0;
+        int avg = Evaluator.getEvaluator().findAvg();
+        g.drawLine(0, 700 - avg, 700, 700 - avg);
         for (int i = 0; i < points.length - 1; ++i) {
-            g.drawLine(prevX, points[i], prevX + 20, points[i + 1]);
-            g.fillRect(prevX, points[i], 5, 5);
+            g.drawLine(prevX, height - points[i], prevX + 20, height - points[i + 1]);
+            g.fillRect(prevX, height - points[i] - 2, 5, 5);
             prevX = prevX + 20;
         }
     }

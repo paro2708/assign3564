@@ -25,12 +25,15 @@ public class BasePlot extends JPanel implements Drawable {
 
     @Override
     public void paint(Graphics g) {
+        int height = 500;
         super.paint(g);
         g.setColor(Color.YELLOW);
         int points[] = DataSource.getDataSource().getData();
+        int avg = Evaluator.getEvaluator().findAvg();
+        g.drawLine(0, height - avg, 700, height - avg);
         int prevX = 0;
         for (int i = 0; i < points.length - 1; ++i) {
-            g.drawLine(prevX, points[i], prevX + 20, points[i + 1]);
+            g.drawLine(prevX, height - points[i], prevX + 20, height - points[i + 1]);
             prevX = prevX + 20;
         }
     }

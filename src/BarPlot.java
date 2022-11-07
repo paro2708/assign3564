@@ -26,21 +26,23 @@ public class BarPlot extends DecoratorPlot {
 
     @Override
     public void paint(Graphics g) {
+        int height = 500;
         super.paint(g);
         g.setColor(Color.YELLOW);
         int points[] = DataSource.getDataSource().getData();
+        int avg = Evaluator.getEvaluator().findAvg();
+        g.drawLine(0, height - avg, height, height - avg);
         int prevX = 0;
         for (int i = 0; i < points.length - 1; ++i) {
-            g.drawLine(prevX, points[i], prevX + 20, points[i + 1]);
-            g.drawRect(prevX, points[i] - 2, 5, 700);
-            g.fillRect(prevX, points[i] - 2, 5, 700);
+            g.drawLine(prevX, height - points[i], prevX + 20, height - points[i + 1]);
+            g.fillRect(prevX, height - points[i] - 2, 5, height);
             prevX = prevX + 20;
         }
     }
 
     private void drawPoints() {
         panel = new BarPlot(s);
-        panel.setPreferredSize(new Dimension(500, 700));
+        panel.setPreferredSize(new Dimension(500, 500));
         panel.setBackground(Color.BLACK);
     }
 }
