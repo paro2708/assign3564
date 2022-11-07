@@ -1,8 +1,9 @@
 import javax.swing.JButton;
 import javax.swing.JFrame;
+import javax.swing.KeyStroke;
+
 import java.awt.FlowLayout;
 import java.awt.event.*;
-import java.util.FormattableFlags;
 
 public class App extends JFrame implements ActionListener {
     static PlotPanel plotPanel = PlotPanel.getPlotPanel();
@@ -13,6 +14,7 @@ public class App extends JFrame implements ActionListener {
 
         frame = new JFrame();
         JButton runButton = new JButton("Run");
+
         frame.setLayout(new FlowLayout(FlowLayout.LEADING, 10, 10));
         frame.add(plotPanel.drawPanels());
         System.out.println("Painting re");

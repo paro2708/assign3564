@@ -32,12 +32,11 @@ public class PlotPanel extends JPanel implements Observer {
 
     public JPanel drawPanels() {
         jPanel = new JPanel(new FlowLayout(FlowLayout.LEADING, 10, 10));
-        jPanel = new JPanel();
-        jPanel.setLayout(getLayout());
         jPanel.setBorder(new TitledBorder(new LineBorder(Color.BLACK), "Plot Panel"));
         // Drawable plot = new BarPlot(new BarPlot(new BarPlot(new BarPlot(new
         // BasePlot()))));
-        Drawable plot = new BarPlot(new BarPlot(new BasePlot()));
+        // Drawable plot = new BasePlot();
+        Drawable plot = new PointPlot(new BarPlot(new BasePlot()));
         jPanel = plot.plotPoints(jPanel, points);
         return jPanel;
     }

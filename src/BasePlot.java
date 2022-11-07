@@ -15,10 +15,9 @@ public class BasePlot extends JPanel implements Drawable {
     }
 
     @Override
-    public JPanel plotPoints(JPanel finalPanel, int points[]) {
+    public JPanel plotPoints(JPanel finalPanel, int point[]) {
         System.out.println("Base Plot");
-        for (int x : points)
-            System.out.println(x);
+        this.points = point;
         drawPoints();
         finalPanel.add(panel);
         return finalPanel;
@@ -27,18 +26,19 @@ public class BasePlot extends JPanel implements Drawable {
     @Override
     public void paint(Graphics g) {
         super.paint(g);
-        // panel.setSize(660, 600);
-        // panel.setForeground(Color.GREEN);
-        // panel.setBackground(Color.BLACK);
         g.setColor(Color.YELLOW);
-        g.drawRect(0, 0, 500, 300);
-        g.drawLine(10, 0, 80, 90);
+        int points[] = DataSource.getDataSource().getData();
+        int prevX = 0;
+        for (int i = 0; i < points.length - 1; ++i) {
+            g.drawLine(prevX, points[i], prevX + 20, points[i + 1]);
+            prevX = prevX + 20;
+        }
     }
 
     private void drawPoints() {
         System.out.println("IM here in base class");
         panel = new BasePlot();
-        panel.setPreferredSize(new Dimension(400, 300));
+        panel.setPreferredSize(new Dimension(500, 500));
         panel.setBackground(Color.RED);
     }
 }
