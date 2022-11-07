@@ -9,7 +9,7 @@ public class DecoratorPlot extends JPanel implements Drawable {
     }
 
     @Override
-    public JPanel plotPoints(JPanel j, int points[]) {
-        return simplePlot.plotPoints(j, points);
+    public JPanel plotPoints(JPanel j) {
+        return simplePlot.plotPoints(j);
     }
 }

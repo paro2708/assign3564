@@ -37,7 +37,7 @@ public class PlotPanel extends JPanel implements Observer {
         // BasePlot()))));
         // Drawable plot = new BasePlot();
         Drawable plot = new PointPlot(new BarPlot(new BasePlot()));
-        jPanel = plot.plotPoints(jPanel, points);
+        jPanel = plot.plotPoints(jPanel);
         return jPanel;
     }
 

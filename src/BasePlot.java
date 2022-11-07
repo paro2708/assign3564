@@ -1,8 +1,6 @@
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Graphics;
-
-import javax.swing.JComponent;
 import javax.swing.JPanel;
 
 public class BasePlot extends JPanel implements Drawable {
@@ -15,9 +13,8 @@ public class BasePlot extends JPanel implements Drawable {
     }
 
     @Override
-    public JPanel plotPoints(JPanel finalPanel, int point[]) {
+    public JPanel plotPoints(JPanel finalPanel) {
         System.out.println("Base Plot");
-        this.points = point;
         drawPoints();
         finalPanel.add(panel);
         return finalPanel;
@@ -30,7 +27,7 @@ public class BasePlot extends JPanel implements Drawable {
         g.setColor(Color.YELLOW);
         int points[] = DataSource.getDataSource().getData();
         int avg = Evaluator.getEvaluator().findAvg();
-        g.drawLine(0, height - avg, 700, height - avg);
+        g.drawLine(0, height - avg, 1000, height - avg);
         int prevX = 0;
         for (int i = 0; i < points.length - 1; ++i) {
             g.drawLine(prevX, height - points[i], prevX + 20, height - points[i + 1]);

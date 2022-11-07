@@ -13,7 +13,6 @@ public class App extends JFrame implements ActionListener {
 
         frame = new JFrame();
         JButton runButton = new JButton("Run");
-
         frame.setLayout(new FlowLayout(FlowLayout.LEADING, 10, 10));
         frame.add(plotPanel.drawPanels());
         System.out.println("Painting re");
@@ -26,15 +25,15 @@ public class App extends JFrame implements ActionListener {
     }
 
     public App() {
-        // JButton runButton = new JButton("First Run");
-        // runButton.addActionListener(this);
-        // frame = new JFrame();
-        // frame.add(runButton);
-        // frame.setSize(500, 500);
-        // frame.setLayout(new FlowLayout(FlowLayout.LEADING, 10, 10));
-        // frame.setTitle("Assignment 3");
-        // frame.setVisible(true);
-        frameGenerator();
+        JButton runButton = new JButton("First Run");
+        runButton.addActionListener(this);
+        frame = new JFrame();
+        frame.add(runButton);
+        frame.setSize(500, 500);
+        frame.setLayout(new FlowLayout(FlowLayout.LEADING, 10, 10));
+        frame.setTitle("Assignment 3");
+        frame.setVisible(true);
+        // frameGenerator();
     }
 
     public static void main(String[] args) throws Exception {

@@ -13,14 +13,10 @@ public class BarPlot extends DecoratorPlot {
     }
 
     @Override
-    public JPanel plotPoints(JPanel finalPanel, int[] points) {
-        finalPanel = super.plotPoints(finalPanel, points);
+    public JPanel plotPoints(JPanel finalPanel) {
+        finalPanel = super.plotPoints(finalPanel);
         drawPoints();
         finalPanel.add(panel);
-        for (int x : points) {
-            System.out.println(x);
-        }
-        System.out.println("points in bar");
         return finalPanel;
     }
 
@@ -31,7 +27,7 @@ public class BarPlot extends DecoratorPlot {
         g.setColor(Color.YELLOW);
         int points[] = DataSource.getDataSource().getData();
         int avg = Evaluator.getEvaluator().findAvg();
-        g.drawLine(0, height - avg, height, height - avg);
+        g.drawLine(0, height - avg, 1000, height - avg);
         int prevX = 0;
         for (int i = 0; i < points.length - 1; ++i) {
             g.drawLine(prevX, height - points[i], prevX + 20, height - points[i + 1]);
