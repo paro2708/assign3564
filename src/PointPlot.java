@@ -24,6 +24,7 @@ public class PointPlot extends DecoratorPlot {
         return finalPanel;
     }
 
+    // This method draws the lines.
     @Override
     public void paint(Graphics g) {
         super.paint(g);

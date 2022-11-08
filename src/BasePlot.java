@@ -23,7 +23,6 @@ public class BasePlot extends JPanel implements Drawable {
     }
 
     // This method draws the rectangle on the GUI and fills the colour to make it visible.
-
     @Override
     public void paint(Graphics g) {
         int height = 500;

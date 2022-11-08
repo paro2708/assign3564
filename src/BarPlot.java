@@ -26,7 +26,6 @@ public class BarPlot extends DecoratorPlot {
     }
 
     // This method draws the rectangle on the GUI and fills the colour to make it visible.
-    
     @Override
     public void paint(Graphics g) {
         int height = 500;
@@ -43,6 +42,7 @@ public class BarPlot extends DecoratorPlot {
         }
     }
 
+    //This functions sets the size of the panel and the background color.
     private void drawPoints() {
         panel = new BarPlot(s);
         panel.setPreferredSize(new Dimension(500, 500));

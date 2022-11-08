@@ -17,28 +17,29 @@ public class App extends JFrame implements ActionListener {
     static DataSource dataSource = DataSource.getDataSource();
     static JFrame frame;
 
-    public void frameGenerator() {
+    //This code creates a new frame and adds the buttons.
+    public JFrame createFrame(String buttonName, String title) {
         frame = new JFrame();
-        JButton runButton = new JButton("Run");
+        JButton runButton = new JButton(buttonName);
         frame.setLayout(new FlowLayout(FlowLayout.LEADING, 10, 10));
-        frame.add(plotPanel.drawPanels());
         runButton.addActionListener(this);
         frame.add(runButton);
-        frame.setTitle("Assignment 03- Design Patterns");
+        frame.setTitle(title);
+        frame.setVisible(true);
+        return frame;
+    }
+
+    public void frameGenerator() {
+        JFrame frame = createFrame("Run", "Assignment 03- Design Patterns");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.pack();
-        frame.setVisible(true);
+        frame.add(plotPanel.drawPanels());
+        frame.setSize(2000, 2000);
     }
 
     public App() {
-        JButton runButton = new JButton("First Run");
-        runButton.addActionListener(this);
-        frame = new JFrame();
-        frame.add(runButton);
-        frame.setSize(500, 500);
-        frame.setLayout(new FlowLayout(FlowLayout.LEADING, 10, 10));
-        frame.setTitle("Assignment 3");
-        frame.setVisible(true);
+        JFrame frame = createFrame("First Run", "Assignment 03- Design Patterns");
+        frame.setSize(200, 200);
     }
 
     public static void main(String[] args) throws Exception {
